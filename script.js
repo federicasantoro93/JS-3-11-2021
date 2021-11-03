@@ -47,17 +47,27 @@ const qS = (selector) => document.querySelector(selector);
 
 //Dichiaro la funzione render
 const render = (container, items) => {
-    const elements = items.map((element) =>
-    `<li>
-    <input type="checkbox" name="${element.title}" value="${element.completed}">
-                    <label for="${element.title}">${element.title}</label>
-    <li>`
-    );
+    const elements = items.map((element) =>{
+        
+        console.log(element);
+        return `<li>
+        <input type="checkbox" name="${element.title}" ${element.completed ? "checked" : "unchecked"}/>
+        <label for="${element.title}">${element.title}</label>
+        <li>`
+});
 
     const content = elements.join(''); //Il join()metodo crea e restituisce una nuova stringa concatenando tutti gli elementi in un array 
 
     container.innerHTML = content //La proprietà innerHTML ottiene o imposta il markup HTML contenuto nell'elemento.
+
+   
+   
+
 }
+
+
+
+
 //L'oggetto Map contiene coppie chiave-valore e ricorda l'ordine di inserimento originale delle chiavi. Qualsiasi valore (sia oggetti che valori primitivi ) può essere utilizzato come chiave o valore.
 
 // Aggiungo un evento al documento stesso per assicurarmi che il codice non venga eseguito finchè il Dom non sia stato inizializzato.
