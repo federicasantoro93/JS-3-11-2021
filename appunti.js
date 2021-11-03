@@ -59,4 +59,61 @@ document.addEventlistener('DONContentLoaded'), () =>{
     const list = q('ul');
 });
 
+Se domani volessimo cambiare codice (ottenendo lo stesso risultato) cambiando solo la prima riga di codice
+cambiamo tutte le variabili.
+
+*/
+
+/**
+ *  Wraps the document.querySelector metodh
+ 
+
+//Commento?
+
+const q = (selector) => document.querySelector(selector);
+
+document.addEventlistener('DONContentLoaded'), () =>{
+    const form = q('form');
+    const input = q('form input');
+    const list = q('ul');
+
+const elements = data.map((element,index) => {
+    //return element.name + ", " + element.phone + ", " + element.email;
+    return `<li>
+    <h3>${element.name}</h3>
+    <p><strong>Phone:</strong><a href="tel:${element.phone}">${element.phone}</a></p>
+     <p><strong>Phone:</strong><a href="emailto:${element.email}">${element.email}</a></p>
+     </li>`; 
+});
+    const content = elemets.join('');
+    
+    list.innerHTML = content; ???
+
+    //console.log(elements);
+    //console.log(content);
+
+
+});
+ 
+Di default array.map() crea un nuovo array, copiando l'array d'origine e poi modificandolo in base alle istruzioni
+ Nell'autput avremo un array di 5 elementi 
+ Una template string 
+//METODO JOIN
+.join() crea una stringa partendo da un'array concatenando tutti gli elementi tra di loro.
+Posso castumizzare la stringa inserendo fra parentesi per esempio uno spazio vuoto (" ")
+
+Se volessimo ottimizzare...
+
+const elements = data.map((element) => 
+    `<li>
+    <h3>${element.name}</h3>
+    <p><strong>Phone:</strong><a href="tel:${element.phone}">${element.phone}</a></p>
+    <p><strong>Phone:</strong><a href="emailto:${element.email}">${element.email}</a></p>
+    </li>`; 
+});
+
+Togliamo le graffe perchè...
+Togliamo il return...
+
+
 */
